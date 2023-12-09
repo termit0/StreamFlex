@@ -37,22 +37,3 @@ graph TD;
     StreamFlex.Application-->StreamFlex.Domain;
     StreamFlex.Infrastructure-->StreamFlex.Domain;
 ```
-
-/StreamFlex
-    /.gitignore
-    /README.md
-    /.obsidian
-        /app.json
-        /appearance.json
-        /core-plugins-migration.json
-        /core-plugins.json
-        /hotkeys.json
-        /workspace.json
-    /md
-        /noPublishNotes.md
-        /img
-            /StreamFlex.png
-    /src
-        /StreamFlexApp
-            /StreamFlex.sln
-
