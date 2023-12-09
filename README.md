@@ -46,6 +46,51 @@ StreamFlex is a comprehensive web video management system designed to streamline
 8. **Logging Service**: Log Management and Analysis Service
 9. **OS Client (iOS)** Mobile Application
 
+<pre>
+StreamFlex/
+│
+├── md/                                         # Markdown files
+│   ├── img/                                    # Images for markdown files
+│   │   └── StreamFlex.png
+│   └── noPublishNotes.md
+│
+├── Dockerfile                                  # Dockerfile for the whole application
+│
+├── src/                                        # Source code
+│   ├── StreamFlex/                             # StreamFlex project files
+│   ├── StreamFlex.Web/                         # Web server (Blazor)
+│   │   └── Dockerfile                          # Dockerfile for the web server
+│   ├── StreamFlex.Api/                         # Back-end (ASP.NET Core)
+│   │   └── Dockerfile                          # Dockerfile for the back-end
+│   ├── StreamFlex.Workers/                     # Worker services
+│   │   ├── StreamFlex.DownloadWorker/
+│   │   │   └── Dockerfile                      # Dockerfile for the download worker
+│   │   ├── StreamFlex.EncodingWorker/
+│   │   │   └── Dockerfile                      # Dockerfile for the encoding worker
+│   │   └── StreamFlex.PreviewGenerationWorker/
+│   │       └── Dockerfile                      # Dockerfile for the preview generation worker
+│   ├── StreamFlex.Mobile/                      # Mobile application (iOS)
+│   └── StreamFlex.sln                          # Solution file
+│
+├── resources/                                  # Static resources
+│   ├── videos/                                 # Video files
+│   └── images/                                 # Image files
+│
+├── scripts/                                    # Scripts for building, deployment, etc.
+│
+├── tests/                                      # Test code
+│   ├── StreamFlex.Web.Tests/
+│   ├── StreamFlex.Api.Tests/
+│   ├── StreamFlex.Workers.Tests/
+│   └── StreamFlex.Mobile.Tests/
+│
+├── logs/                                       # Log files
+│
+├── .gitignore                                  # Specifies intentionally untracked files to ignore
+└── README.md                                   # Readme file
+</pre>
+
+
 <!--
 ## Getting Started
 - Detailed instructions on setting up the StreamFlex environment.
