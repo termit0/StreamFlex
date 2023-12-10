@@ -5,6 +5,10 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex", "StreamFlex\StreamFlex.csproj", "{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StreamFlex.Workers", "StreamFlex.Workers", "{0B1564D1-E296-4B3E-AF89-E75D7A3FE3CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.csproj", "{FDC97245-D034-42BD-8C3F-3C80160B8C5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDC97245-D034-42BD-8C3F-3C80160B8C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC97245-D034-42BD-8C3F-3C80160B8C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC97245-D034-42BD-8C3F-3C80160B8C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC97245-D034-42BD-8C3F-3C80160B8C5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FDC97245-D034-42BD-8C3F-3C80160B8C5B} = {0B1564D1-E296-4B3E-AF89-E75D7A3FE3CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2A465E4-FB10-4860-B102-6F04814E3348}

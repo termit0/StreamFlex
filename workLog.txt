@@ -1,0 +1,4 @@
+﻿12/10/2023
++ created docker file
++ dotnet sln StreamFlex.sln add StreamFlex.DownloadWorker/StreamFlex.DownloadWorker.csproj
++ dotnet new worker -n StreamFlex.DownloadWorker (08:30)

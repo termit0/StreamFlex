@@ -1,4 +1,4 @@
-﻿# StreamFlex
+# StreamFlex
 
 ## Description
 StreamFlex is a comprehensive web video management system designed to streamline the process of video content handling, from upload to processing and viewing. It integrates various technologies to provide a seamless user experience for both content creators and consumers.
@@ -8,6 +8,8 @@ StreamFlex is a comprehensive web video management system designed to streamline
   - [Key Features](#key-features)
   - [Technologies](#technologies)
   - [Architecture](#architecture)
+  - [Environment](#environment)
+  - [Development](#development)
   - [License](#license)
 
 ![StreamFlex](md/img/StreamFlex.png)
@@ -90,6 +92,13 @@ StreamFlex/
 └── README.md                                   # Readme file
 </pre>
 
+
+## Environment
+This document outlines the steps for setting up a development environment.  
+[Environment page](md/environment/environment.md)
+
+## Development
+[Development page](md/development/development.md)
 
 <!--
 ## Getting Started
