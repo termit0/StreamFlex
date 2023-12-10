@@ -1,10 +1,10 @@
 namespace StreamFlex.DownloadWorker;
 
-public class Worker : BackgroundService
+public class DownloadWorker : BackgroundService
 {
-    private readonly ILogger<Worker> _logger;
+    private readonly ILogger<DownloadWorker> _logger;
 
-    public Worker(ILogger<Worker> logger)
+    public DownloadWorker(ILogger<DownloadWorker> logger)
     {
         _logger = logger;
     }
@@ -13,7 +13,7 @@ public class Worker : BackgroundService
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
+            _logger.LogInformation("DownloadWorker running at: {time}", DateTimeOffset.Now);
             await Task.Delay(1000, stoppingToken);
         }
     }

@@ -3,11 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex", "StreamFlex\StreamFlex.csproj", "{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StreamFlex.Workers", "StreamFlex.Workers", "{0B1564D1-E296-4B3E-AF89-E75D7A3FE3CF}"
+	ProjectSection(SolutionItems) = preProject
+		StreamFlex.Workers\StreamFlex.DownloadWorker\setupStreamFlex.cmd = StreamFlex.Workers\StreamFlex.DownloadWorker\setupStreamFlex.cmd
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.csproj", "{FDC97245-D034-42BD-8C3F-3C80160B8C5B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StreamFlex.DownloadWorker", "StreamFlex.DownloadWorker", "{189BADF1-8C74-43BB-B18F-EB618FC45A23}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.csproj", "{630AA999-2FE8-4870-BA6C-7E7C52F78F9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker.Core", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.Core\StreamFlex.DownloadWorker.Core.csproj", "{EAC785D3-13A8-401F-9DE8-D29CA151B6A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker.Services", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.Services\StreamFlex.DownloadWorker.Services.csproj", "{95A89DBF-DE69-41A7-AB09-807724001445}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker.Infrastructure", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.Infrastructure\StreamFlex.DownloadWorker.Infrastructure.csproj", "{907E0DDC-D70C-4C80-89E2-301BA06F576B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker.Api", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.Api\StreamFlex.DownloadWorker.Api.csproj", "{65B5E106-1E20-4F2E-B624-075DF0EE92D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker.Application", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.Application\StreamFlex.DownloadWorker.Application.csproj", "{B9DF92A0-A08A-45B7-86A9-211CF44B6B3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{06BD99DB-41C2-4AEF-BF49-211B7F170215}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StreamFlex.Workers", "StreamFlex.Workers", "{C6842982-865A-4794-B4CC-FAD8D53F3F21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StreamFlex.DownloadWorker", "StreamFlex.DownloadWorker", "{A17FDEBF-E50C-48E7-9F27-AC2E9E9F0758}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker.Tests", "UnitTests\StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.Tests\StreamFlex.DownloadWorker.Tests.csproj", "{5D3F3A15-E7D8-4418-8534-5285B56A6307}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +36,49 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F80C7AAE-8B22-4FD2-A5B4-3F719B41314A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDC97245-D034-42BD-8C3F-3C80160B8C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDC97245-D034-42BD-8C3F-3C80160B8C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDC97245-D034-42BD-8C3F-3C80160B8C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDC97245-D034-42BD-8C3F-3C80160B8C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{630AA999-2FE8-4870-BA6C-7E7C52F78F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630AA999-2FE8-4870-BA6C-7E7C52F78F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630AA999-2FE8-4870-BA6C-7E7C52F78F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630AA999-2FE8-4870-BA6C-7E7C52F78F9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC785D3-13A8-401F-9DE8-D29CA151B6A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC785D3-13A8-401F-9DE8-D29CA151B6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC785D3-13A8-401F-9DE8-D29CA151B6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC785D3-13A8-401F-9DE8-D29CA151B6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95A89DBF-DE69-41A7-AB09-807724001445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95A89DBF-DE69-41A7-AB09-807724001445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95A89DBF-DE69-41A7-AB09-807724001445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95A89DBF-DE69-41A7-AB09-807724001445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{907E0DDC-D70C-4C80-89E2-301BA06F576B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{907E0DDC-D70C-4C80-89E2-301BA06F576B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{907E0DDC-D70C-4C80-89E2-301BA06F576B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{907E0DDC-D70C-4C80-89E2-301BA06F576B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B5E106-1E20-4F2E-B624-075DF0EE92D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B5E106-1E20-4F2E-B624-075DF0EE92D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B5E106-1E20-4F2E-B624-075DF0EE92D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B5E106-1E20-4F2E-B624-075DF0EE92D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9DF92A0-A08A-45B7-86A9-211CF44B6B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DF92A0-A08A-45B7-86A9-211CF44B6B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DF92A0-A08A-45B7-86A9-211CF44B6B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DF92A0-A08A-45B7-86A9-211CF44B6B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D3F3A15-E7D8-4418-8534-5285B56A6307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D3F3A15-E7D8-4418-8534-5285B56A6307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D3F3A15-E7D8-4418-8534-5285B56A6307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D3F3A15-E7D8-4418-8534-5285B56A6307}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FDC97245-D034-42BD-8C3F-3C80160B8C5B} = {0B1564D1-E296-4B3E-AF89-E75D7A3FE3CF}
+		{189BADF1-8C74-43BB-B18F-EB618FC45A23} = {0B1564D1-E296-4B3E-AF89-E75D7A3FE3CF}
+		{630AA999-2FE8-4870-BA6C-7E7C52F78F9F} = {189BADF1-8C74-43BB-B18F-EB618FC45A23}
+		{EAC785D3-13A8-401F-9DE8-D29CA151B6A2} = {189BADF1-8C74-43BB-B18F-EB618FC45A23}
+		{95A89DBF-DE69-41A7-AB09-807724001445} = {189BADF1-8C74-43BB-B18F-EB618FC45A23}
+		{907E0DDC-D70C-4C80-89E2-301BA06F576B} = {189BADF1-8C74-43BB-B18F-EB618FC45A23}
+		{65B5E106-1E20-4F2E-B624-075DF0EE92D0} = {189BADF1-8C74-43BB-B18F-EB618FC45A23}
+		{B9DF92A0-A08A-45B7-86A9-211CF44B6B3E} = {189BADF1-8C74-43BB-B18F-EB618FC45A23}
+		{C6842982-865A-4794-B4CC-FAD8D53F3F21} = {06BD99DB-41C2-4AEF-BF49-211B7F170215}
+		{A17FDEBF-E50C-48E7-9F27-AC2E9E9F0758} = {C6842982-865A-4794-B4CC-FAD8D53F3F21}
+		{5D3F3A15-E7D8-4418-8534-5285B56A6307} = {A17FDEBF-E50C-48E7-9F27-AC2E9E9F0758}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2A465E4-FB10-4860-B102-6F04814E3348}

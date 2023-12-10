@@ -1,4 +1,4 @@
-# StreamFlex
+﻿# StreamFlex
 
 ## Description
 StreamFlex is a comprehensive web video management system designed to streamline the process of video content handling, from upload to processing and viewing. It integrates various technologies to provide a seamless user experience for both content creators and consumers.
@@ -48,7 +48,7 @@ StreamFlex is a comprehensive web video management system designed to streamline
 8. **Logging Service**: Log Management and Analysis Service
 9. **OS Client (iOS)** Mobile Application
 
-<pre>
+```
 StreamFlex/
 │
 ├── md/                                         # Markdown files
@@ -56,22 +56,38 @@ StreamFlex/
 │   │   └── StreamFlex.png
 │   └── noPublishNotes.md
 │
-├── Dockerfile                                  # Dockerfile for the whole application
+├── docker-compose.yml                          # Docker-compose configuration
 │
 ├── src/                                        # Source code
 │   ├── StreamFlex/                             # StreamFlex project files
 │   ├── StreamFlex.Web/                         # Web server (Blazor)
+│   │   ├── wwwroot/                            # Static files for the web application
+│   │   ├── Controllers/                        # Controllers for handling web requests
+│   │   ├── Views/                              # Razor views for UI
+│   │   ├── appsettings.json                    # Configuration files
 │   │   └── Dockerfile                          # Dockerfile for the web server
+│   │
 │   ├── StreamFlex.Api/                         # Back-end (ASP.NET Core)
+│   │   ├── Controllers/                        # API controllers
+│   │   ├── DTOs/                               # Data Transfer Object
 │   │   └── Dockerfile                          # Dockerfile for the back-end
+│   │
 │   ├── StreamFlex.Workers/                     # Worker services
 │   │   ├── StreamFlex.DownloadWorker/
+│   │   │   ├── Services/                       # Services specific to the download worker
+│   │   │   ├── Models/                         # Data models for the download worker
 │   │   │   └── Dockerfile                      # Dockerfile for the download worker
+│   │   │
 │   │   ├── StreamFlex.EncodingWorker/
 │   │   │   └── Dockerfile                      # Dockerfile for the encoding worker
+│   │   │
 │   │   └── StreamFlex.PreviewGenerationWorker/
 │   │       └── Dockerfile                      # Dockerfile for the preview generation worker
-│   ├── StreamFlex.Mobile/                      # Mobile application (iOS)
+│   │
+│   ├── StreamFlex.Mobile/                      # Mobile client application
+│   │   ├── StreamFlex.iOS/                     # iOS specific project
+│   │   └── StreamFlex.Android/                 # Android specific project
+│   │
 │   └── StreamFlex.sln                          # Solution file
 │
 ├── resources/                                  # Static resources
@@ -83,14 +99,25 @@ StreamFlex/
 ├── tests/                                      # Test code
 │   ├── StreamFlex.Web.Tests/
 │   ├── StreamFlex.Api.Tests/
-│   ├── StreamFlex.Workers.Tests/
-│   └── StreamFlex.Mobile.Tests/
+│   ├── StreamFlex.Workers/
+│   │   └── StreamFlex.DownloadWorker/
+│   └── StreamFlex.Mobile/
+│
+├── StreamFlex.Infrastructure/                  # Infrastructure code
+│   ├── Database/                               # Database related code
+│   ├── Messaging/                              # Code for handling message queues
+│   └── Caching/                                # Caching mechanis
+
+│
+├── StreamFlex.Common/                          # Shared code across different projects
+│   ├── Utilities/                              # Common utilities
+│   └── Interfaces/                             # Common interfaces
 │
 ├── logs/                                       # Log files
 │
 ├── .gitignore                                  # Specifies intentionally untracked files to ignore
 └── README.md                                   # Readme file
-</pre>
+```
 
 
 ## Environment
