@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StreamFlex.DownloadWorker",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamFlex.DownloadWorker.Tests", "UnitTests\StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.Tests\StreamFlex.DownloadWorker.Tests.csproj", "{5D3F3A15-E7D8-4418-8534-5285B56A6307}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamFlex.DownloadWorker.Handlers", "StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.Handlers\StreamFlex.DownloadWorker.Handlers.csproj", "{88ACBCED-E4C2-4A29-8E85-73A310C7D453}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{5D3F3A15-E7D8-4418-8534-5285B56A6307}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D3F3A15-E7D8-4418-8534-5285B56A6307}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D3F3A15-E7D8-4418-8534-5285B56A6307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88ACBCED-E4C2-4A29-8E85-73A310C7D453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88ACBCED-E4C2-4A29-8E85-73A310C7D453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88ACBCED-E4C2-4A29-8E85-73A310C7D453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88ACBCED-E4C2-4A29-8E85-73A310C7D453}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{C6842982-865A-4794-B4CC-FAD8D53F3F21} = {06BD99DB-41C2-4AEF-BF49-211B7F170215}
 		{A17FDEBF-E50C-48E7-9F27-AC2E9E9F0758} = {C6842982-865A-4794-B4CC-FAD8D53F3F21}
 		{5D3F3A15-E7D8-4418-8534-5285B56A6307} = {A17FDEBF-E50C-48E7-9F27-AC2E9E9F0758}
+		{88ACBCED-E4C2-4A29-8E85-73A310C7D453} = {189BADF1-8C74-43BB-B18F-EB618FC45A23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2A465E4-FB10-4860-B102-6F04814E3348}

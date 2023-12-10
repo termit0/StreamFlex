@@ -1,5 +1,13 @@
 ﻿2023/12/10
 
+- [x] Added logo for termit (16:20-16:45)
+---
+- [x] Development DownloadWorker Project Architecture (12:30-16:20)
+  - [x] Project structure (15:00)
+    - [x] Create the project structure (16:20)
+  - [x] documentation (14:20)
+    - [x] File structure
+---
 Next steps include creating a Dockerfile for the worker service and deploying it on the server.
 - [x] Deploy and run the worker service on the server.
   - [x] Launch on Portainer (12:30)

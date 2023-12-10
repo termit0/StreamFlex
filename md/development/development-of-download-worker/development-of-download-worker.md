@@ -25,6 +25,15 @@ The development of the DownloadWorker architecture as part of the comprehensive 
 # Download Worker Project Structure
 [Download Worker Project Structure page](download-worker-project-structure/download-worker-project-structure.md)
 
+```mermaid
+graph TD;
+    API-->Application;
+    Application-->Domain;
+    Infrastructure-->Domain;
+    Services-->Domain;
+    Handlers-->Services;
+    Handlers-->Infrastructure;
+```
 
 ## Domain-Driven Design (DDD) Principles
 - **Bounded Context Definition**: DownloadWorker has a clearly defined area of responsibility, which includes downloading video files and interacting with users.
@@ -48,7 +57,10 @@ The development of the DownloadWorker architecture as part of the comprehensive 
 
 ## Current task
 
-- [ ] Development DownloadWorker Classes Architecture (16:20-)
+- [ ] Development DownloadWorker Classes Architecture (16:20-18:31)
+  - [ ] Learning the How MessageBus works (18:36-)
+  - [x] Distribution of classes between projects (18:31)
+  - [x] Learning the principles of DDD (18:31)
 
 
 ## TimeLine

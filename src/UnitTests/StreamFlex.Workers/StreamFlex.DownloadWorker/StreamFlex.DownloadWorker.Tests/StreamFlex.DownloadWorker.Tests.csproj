@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\StreamFlex.Workers\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker\StreamFlex.DownloadWorker.csproj" />
+  </ItemGroup>
+
 </Project>
