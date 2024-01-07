@@ -1,24 +1,20 @@
-# Use the .NET SDK image as the base image
+# Use the .NET SDK image as the base image for building the project
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /src
 
-# Copy the project files to the container
-COPY StreamFlex.DownloadWorker.Api/StreamFlex.DownloadWorker.Api.csproj .
-COPY StreamFlex.DownloadWorker.Services/StreamFlex.DownloadWorker.Services.csproj .
-
-# Restore the NuGet packages
-RUN dotnet restore
-
-# Copy the rest of the project files to the container
+# Copy the entire project to the container
 COPY . .
 
+# Restore the NuGet packages
+RUN dotnet restore "StreamFlex.DownloadWorker.Api/StreamFlex.DownloadWorker.Api.csproj"
+
 # Build the project
-RUN dotnet build -c Release --no-restore
+RUN dotnet build "StreamFlex.DownloadWorker.Api/StreamFlex.DownloadWorker.Api.csproj" -c Release --no-restore
 
 # Publish the project
-RUN dotnet publish StreamFlex.DownloadWorker.Api/StreamFlex.DownloadWorker.Api.csproj -c Release -o /app/publish --no-restore
+RUN dotnet publish "StreamFlex.DownloadWorker.Api/StreamFlex.DownloadWorker.Api.csproj" -c Release -o /app/publish --no-restore
 
 # Use the ASP.NET Core runtime image as the final image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS final
