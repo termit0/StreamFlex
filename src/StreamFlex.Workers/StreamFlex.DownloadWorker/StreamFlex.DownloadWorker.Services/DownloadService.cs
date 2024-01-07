@@ -2,15 +2,17 @@
 
 public class DownloadService
 {
-    // Implementation of DownloadService
-}
+    private readonly VideoDownloader _videoDownloader;
 
-public class VideoDownloader
-{
-    // Implementation of VideoDownloader
-}
+    public DownloadService()
+    {
+        _videoDownloader = new VideoDownloader();// todo: need to use DI
+    }
 
-public class DownloadQueueManager
-{
-    // Implementation of DownloadQueueManager
+    public async Task DownloadVideoFromUrl(string url)
+    {
+        // todo: Тут визначте шлях для збереження файлу
+        var outputPath = "D:/tmp/";// todo: hard code
+        await _videoDownloader.DownloadVideoAsync(url, outputPath);
+    }
 }
