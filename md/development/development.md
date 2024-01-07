@@ -10,16 +10,24 @@
 
 
 ```
-├── StreamFlex.DownloadWorker/                 # Download worker project
-│   ├── Services/                              # Services specific to the download worker
-│   ├── Models/                                # Data models for the download worker
-│   ├── Dockerfile                             # Dockerfile for the download worker
-│   └── StreamFlex.DownloadWorker.csproj       # Project file
-├── StreamFlex.EncodingWorker/                 # Encoding worker project
-│   └── ...                                    # Similar structure as DownloadWorker
-└── StreamFlex.PreviewGenerationWorker/        # Preview generation worker project
-    └── ...                                    # Similar structure as DownloadWorker
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1-buster-slim AS base
+WORKDIR /app
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+WORKDIR /src
+COPY ["StreamFlex.DownloadWorker/StreamFlex.DownloadWorker.csproj", "StreamFlex.DownloadWorker/"]
+RUN dotnet restore "StreamFlex.DownloadWorker/StreamFlex.DownloadWorker.csproj"
+COPY . .
+WORKDIR "/src/StreamFlex.DownloadWorker"
+RUN dotnet build "StreamFlex.DownloadWorker.csproj" -c Release -o /app/build
+FROM build AS publish
+RUN dotnet publish "StreamFlex.DownloadWorker.csproj" -c Release -o /app/publish
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "StreamFlex.DownloadWorker.dll"]
 ```
+
+
 <!-- 
 ## Docker and Deployment
 ## API versions

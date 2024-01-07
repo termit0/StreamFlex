@@ -1,151 +1,79 @@
-﻿# StreamFlex
 
-## Description
-StreamFlex is a comprehensive web video management system designed to streamline the process of video content handling, from upload to processing and viewing. It integrates various technologies to provide a seamless user experience for both content creators and consumers.
+[development](md/development/development.md)
 
-- [StreamFlex](#streamflex)
-  - [Description](#description)
-  - [Key Features](#key-features)
-  - [Technologies](#technologies)
-  - [Architecture](#architecture)
-  - [Environment](#environment)
-  - [Development](#development)
-  - [License](#license)
 
-![StreamFlex](md/img/StreamFlex.png)
+Для реализации этого сценария нам потребуется выполнить следующие шаги:
 
-## Key Features
-- User authentication through external providers like Google, GitHub, etc.
-- Video upload, viewing, editing, and deletion capabilities.
-- Real-time video processing and encoding for various formats and platforms.
-- Asynchronous task processing for non-blocking operations.
-- Efficient caching system for quick access to videos and user information.
-- Mobile application support for iOS devices.
+1. Получение ссылки от пользователя: На этом этапе пользователь предоставляет ссылку на видео, которое он хочет загрузить. Это может быть реализовано через веб-интерфейс или API.
 
-## Technologies
-- **Front-end**: Blazor for User Interface
-- **Back-end**: ASP.NET Core, supported by MySQL database
-- **Caching**: Redis for fast data retrieval
-- **Messaging and Queue Management**: RabbitMQ for asynchronous task handling
-- **Reverse Proxy**: Nginx for managing incoming requests
-- **Static File Management**: Dedicated server for storing video files and other static content
-- **Background Services**: Various workers for video processing, encoding, and preview generation
+2. Проверка ссылки: Проверьте, является ли предоставленная ссылка действительной и доступной для загрузки. Это может включать проверку формата URL и доступности ресурса.
 
-## Architecture
-1. **Web Server (Blazor)**: Manages user interactions and sessions, including OAuth 2.0 authentication.
-2. **Database (MySQL)**: Stores data about videos, users, comments, and other necessary information.
-3. **Cache (Redis)**: Speeds up the loading of frequently requested data.
-4. **Message Queue Server (RabbitMQ)**: Handles tasks that should not block the main workflow.
-5. **Reverse Proxy**: Manages incoming HTTP/HTTPS requests.
-6. **Static File Server**: Stores and serves video files and other static resources.
-7. **Worker Services**: Perform background tasks like video uploading, processing, and encoding.
-     - **Download Worker**
-       - Downloading video files, including receiving files from users.
-     - **Encoding Worker**
-       - Encoding video files for various formats and platforms.
-     - **Preview Generation Worker**
-       - Creating previews for videos.
-8. **Logging Service**: Log Management and Analysis Service
-9. **OS Client (iOS)** Mobile Application
+3. Загрузка видео: Используйте библиотеку или инструмент для загрузки видео по ссылке. Важно убедиться, что ваше приложение может обрабатывать потенциально большие файлы и различные форматы видео.
 
+4. Сохранение видео: После загрузки видео сохраните его в вашей системе файлов или облачном хранилище. Убедитесь, что у вас есть достаточно места для хранения и что вы следуете всем необходимым правилам безопасности и конфиденциальности.
+
+5. Обновление состояния загрузки: Обновите состояние загрузки в пользовательском интерфейсе или базе данных, чтобы пользователь мог видеть прогресс загрузки.
+
+Вот пример кода на C# для загрузки файла по URL с использованием HttpClient:
+
+---
+
+Разработку проекта можно начать, следуя следующим шагам:
+
+1. Понимание требований и планирование: Первым шагом всегда является понимание требований к проекту и его целей. Это включает в себя обсуждение и документирование функциональных и нефункциональных требований, определение основных функций и возможностей, которые должны быть реализованы, и планирование этапов разработки.
+
+2. Проектирование архитектуры: На основе требований вы должны спроектировать архитектуру вашего приложения. Это включает в себя выбор технологий и инструментов, проектирование структуры базы данных, определение структуры проекта и т.д.
+
+3. Настройка среды разработки: Установите и настройте все необходимые инструменты и технологии, которые вы планируете использовать в проекте. Это может включать в себя настройку IDE, установку пакетов и библиотек, настройку сервера баз данных и т.д.
+
+4. Разработка основных функций: Начните с разработки основных функций вашего приложения. Обычно это начинается с создания базовой структуры проекта и реализации ключевых функций.
+
+5. Тестирование: После того, как основные функции будут реализованы, вы должны провести тестирование, чтобы убедиться, что все работает правильно. Это может включать в себя модульное тестирование, интеграционное тестирование, тестирование производительности и т.д.
+
+6. Итерация: Разработка программного обеспечения - это итеративный процесс. После того, как вы реализуете и протестируете основные функции, вы можете перейти к следующему набору функций и повторить процесс.
+
+7. Деплой: После того, как все функции были реализованы и протестированы, вы можете развернуть свое приложение.
+
+8. Поддержка и обновление: После развертывания приложения важно продолжать поддерживать и обновлять его, исправлять ошибки, добавлять новые функции и т.д.
+
+Помните, что этот процесс может варьироваться в зависимости от требований проекта, выбранных методологий (например, Agile, Waterfall и т.д.) и других факторов.
+
+
+с компонентами разобрались, но тут лучше отделить:
+1. проекты, а проекты положить в отдельные папки (проект, может быть отдельным docker image)
+   - создать диаграмму проектов и их взаимодейтсвие
+      - 
 ```
-StreamFlex/
-│
-├── md/                                         # Markdown files
-│   ├── img/                                    # Images for markdown files
-│   │   └── StreamFlex.png
-│   └── noPublishNotes.md
-│
-├── docker-compose.yml                          # Docker-compose configuration
-│
-├── src/                                        # Source code
-│   ├── StreamFlex/                             # StreamFlex project files
-│   ├── StreamFlex.Web/                         # Web server (Blazor)
-│   │   ├── wwwroot/                            # Static files for the web application
-│   │   ├── Controllers/                        # Controllers for handling web requests
-│   │   ├── Views/                              # Razor views for UI
-│   │   ├── appsettings.json                    # Configuration files
-│   │   └── Dockerfile                          # Dockerfile for the web server
-│   │
-│   ├── StreamFlex.Api/                         # Back-end (ASP.NET Core)
-│   │   ├── Controllers/                        # API controllers
-│   │   ├── DTOs/                               # Data Transfer Object
-│   │   └── Dockerfile                          # Dockerfile for the back-end
-│   │
-│   ├── StreamFlex.Workers/                     # Worker services
-│   │   ├── StreamFlex.DownloadWorker/
-│   │   │   ├── Services/                       # Services specific to the download worker
-│   │   │   ├── Models/                         # Data models for the download worker
-│   │   │   └── Dockerfile                      # Dockerfile for the download worker
-│   │   │
-│   │   ├── StreamFlex.EncodingWorker/
-│   │   │   └── Dockerfile                      # Dockerfile for the encoding worker
-│   │   │
-│   │   └── StreamFlex.PreviewGenerationWorker/
-│   │       └── Dockerfile                      # Dockerfile for the preview generation worker
-│   │
-│   ├── StreamFlex.Mobile/                      # Mobile client application
-│   │   ├── StreamFlex.iOS/                     # iOS specific project
-│   │   └── StreamFlex.Android/                 # Android specific project
-│   │
-│   └── StreamFlex.sln                          # Solution file
-│
-├── resources/                                  # Static resources
-│   ├── videos/                                 # Video files
-│   └── images/                                 # Image files
-│
-├── scripts/                                    # Scripts for building, deployment, etc.
-│
-├── tests/                                      # Test code
-│   ├── StreamFlex.Web.Tests/
-│   ├── StreamFlex.Api.Tests/
-│   ├── StreamFlex.Workers/
-│   │   └── StreamFlex.DownloadWorker/
-│   └── StreamFlex.Mobile/
-│
-├── StreamFlex.Infrastructure/                  # Infrastructure code
-│   ├── Database/                               # Database related code
-│   ├── Messaging/                              # Code for handling message queues
-│   └── Caching/                                # Caching mechanis
-
-│
-├── StreamFlex.Common/                          # Shared code across different projects
-│   ├── Utilities/                              # Common utilities
-│   └── Interfaces/                             # Common interfaces
-│
-├── logs/                                       # Log files
-│
-├── .gitignore                                  # Specifies intentionally untracked files to ignore
-└── README.md                                   # Readme file
+sequenceDiagram
+Alice->>John: Hello John, how are you?
+loop Healthcheck
+    John->>John: Fight against hypochondria
+end
+Note right of John: Rational thoughts!
+John-->>Alice: Great!
+John->>Bob: How about you?
+Bob-->>John: Jolly good!
 ```
+    - описать предназначение каждого проекта
+    - StreamFlex.WebUI (Blazor приложение): Пользователь вводит ссылку на видео в пользовательский интерфейс. Это приложение затем передает эту ссылку в StreamFlex.Application.
+    - StreamFlex.Application: Этот проект будет содержать основную бизнес-логику вашего приложения. Он получает ссылку на видео от StreamFlex.WebUI и передает ее в StreamFlex.Infrastructure для обработки.
+    - StreamFlex.Infrastructure: Этот проект будет взаимодействовать с внешними API (в данном случае, YouTube API) для загрузки видео. Он также будет отвечать за преобразование видео в нужный формат и сохранение его в файловой системе.
+    - StreamFlex.MediaStorage (отдельный Docker образ): Этот образ будет отвечать за хранение и управление медиафайлами. Он получит обработанный видеофайл от StreamFlex.Infrastructure и сохранит его в подходящем месте.
 
 
-## Environment
-This document outlines the steps for setting up a development environment.  
-[Environment page](md/environment/environment.md)
+1. определить для каждого проекта структуру
 
-## Development
-[Development page](md/development/development.md)
+The project follows the Domain-Driven Design (DDD) methodology and is divided into the following main components:
+- **StreamFlex.Domain**: Contains the core business rules and logic of the application, including entities, aggregates, value objects, and other domain model elements.
+- **StreamFlex.Infrastructure**: Responsible for interactions with external resources such as the database, file system, and external APIs (in this case, the YouTube API).
+- **StreamFlex.Application**: Contains the application logic that coordinates the interaction between the domain and infrastructure. It includes application services, DTOs, repository interfaces, etc.
+- **StreamFlex.WebUI**: Responsible for the presentation and user interface of the application, using Blazor for the web interface.
+- **StreamFlex.Tests**: Contains all tests for the application, including unit tests, integration tests, etc.
 
-<!--
-## Getting Started
-- Detailed instructions on setting up the StreamFlex environment.
-- Guidelines for configuring each component of the system.
 
-## Contributions
-
-- Guidelines for developers interested in contributing to StreamFlex.
-- How to submit pull requests, report bugs, and suggest features.
-
-## Support
-
-- Details on how to get support, including contact information for the development team.
-- Links to community forums or discussion boards.
-
-## User Scenario
-## Development and Deployment
--->
-
-## License
-
-- Information about the open-source license under which StreamFlex is distributed.
+```mermaid
+graph TD;
+    StreamFlex.WebUI-->StreamFlex.Application;
+    StreamFlex.Application-->StreamFlex.Domain;
+    StreamFlex.Infrastructure-->StreamFlex.Domain;
+```
