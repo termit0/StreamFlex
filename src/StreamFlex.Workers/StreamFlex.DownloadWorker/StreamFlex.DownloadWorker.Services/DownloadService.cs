@@ -11,8 +11,7 @@ public class DownloadService
 
     public async Task DownloadVideoFromUrl(string url)
     {
-        // todo: Тут визначте шлях для збереження файлу
-        var outputPath = "D:/tmp/";// todo: hard code
+        var outputPath = Environment.GetEnvironmentVariable("OUTPUT_PATH");
         await _videoDownloader.DownloadVideoAsync(url, outputPath);
     }
 }
